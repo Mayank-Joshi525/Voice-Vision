@@ -33,11 +33,11 @@ Voice Vision is a Python-based virtual voice assistant capable of understanding 
 “What time is it?”
 
 # Project Structure
-voice-vision/
-├── voice_vision.py       # Main script
-├── README.md             # Project documentation
-├── requirements.txt      # List of dependencies
-└── assets/               # (Optional) Images or resources
+- voice-vision/
+- ├── voice_vision.py       # Main script
+- ├── README.md             # Project documentation
+- ├── requirements.txt      # List of dependencies
+- └── assets/               # (Optional) Images or resources
 
 
 # Testing
@@ -47,7 +47,7 @@ voice-vision/
 
 - Wikipedia search and time announcements were validated with dynamic queries.
 
-#Limitations
+# Limitations
 - Dependent on microphone quality and internet connectivity.
 
 - May misinterpret accents or speech in noisy environments.
