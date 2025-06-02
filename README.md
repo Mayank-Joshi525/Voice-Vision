@@ -8,22 +8,23 @@ Voice Vision is a Python-based virtual voice assistant capable of understanding 
 - pyttsx3	Text-to-speech output
 - Wikipedia	Fetching information from the web
 - datetime	Telling current time
-- Tkinter (optional)	GUI (if implemented)
+- Streamlit GUI
 
 # Installation
 1. Clone the repository:
 2. git clone https://github.com/mayank-joshi525/voice-vision.git
 3. cd voice-vision
+4. streamlit run app.py
 
 # Install dependencies:
 - pip install -r requirements.txt
 
 # install them manually:
-- pip install SpeechRecognition pyttsx3 wikipedia
+- pip install SpeechRecognition pyttsx3 wikipedia streamlit
 - Note: You may also need to install PyAudio. If you face issues installing it via pip, refer to platform-specific installation instructions.
 
 # How to Run
-1. python voice_vision.py
+1. streamlit run app.py
 2. You will be prompted to speak. Try commands like:
 
 “What is Python?”
@@ -34,11 +35,10 @@ Voice Vision is a Python-based virtual voice assistant capable of understanding 
 
 # Project Structure
 - voice-vision/
-- ├── voice_vision.py       # Main script
+- ├── app.py       # Main script
 - ├── README.md             # Project documentation
 - ├── requirements.txt      # List of dependencies
-- └── assets/               # (Optional) Images or resources
-
+- └── features/
 
 # Testing
 - Manual testing was conducted using various test phrases.
