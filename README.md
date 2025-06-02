@@ -53,3 +53,8 @@ Voice Vision is a Python-based virtual voice assistant capable of understanding 
 - May misinterpret accents or speech in noisy environments.
 
 - Limited to English and basic tasks (not a full-fledged AI assistant).
+
+# Contributer
+- [Mayank Joshi](https://github.com/mayank-Joshi525/) 
+- [Soumya Brajwasi](https://github.com/Somya2427)
+- [Paras Joshi](http://github.com/paarasjoshi/)
