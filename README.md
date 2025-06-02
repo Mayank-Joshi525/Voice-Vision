@@ -12,7 +12,7 @@ Tkinter (optional)	GUI (if implemented)
 
 # Installation
 Clone the repository:
-git clone https://github.com/mayank-joshi535/voice-vision.git
+git clone https://github.com/mayank-joshi525/voice-vision.git
 cd voice-vision
 
 # Install dependencies:
