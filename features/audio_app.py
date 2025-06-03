@@ -1,18 +1,18 @@
 import streamlit as st
 import whisper
-from io import BytesIO
-import os
-import numpy as np
-import librosa
-import librosa.display
-import time
-import re
-from pydub import AudioSegment
-import matplotlib.pyplot as plt
-import pandas as pd
-from sklearn.cluster import KMeans
-import tempfile
-import json
+from io import BytesIO # Downloading of Files
+import os # local file operation
+import numpy as np # array operations
+import librosa # audio analysis and visualisation
+import librosa.display # number of speaker count
+import time # libraray related to time
+import re # regular expression
+from pydub import AudioSegment # audio manipulation 
+import matplotlib.pyplot as plt #charts and graphs
+import pandas as pd # high extensive calculations which can not be performed in array
+from sklearn.cluster import KMeans # speaker identification
+import tempfile # for creation of temp files
+import json # js data realated
 
 
 def main():  # Added this wrapper function for integration
@@ -20,9 +20,9 @@ def main():  # Added this wrapper function for integration
     
 
     # Load Whisper model once
-    @st.cache_resource
+    @st.cache_resource # for storingn cache
     def load_model():
-        return whisper.load_model("base")
+        return whisper.load_model("base") 
 
     model = load_model()
 
@@ -34,26 +34,32 @@ def main():  # Added this wrapper function for integration
         "ta": "Tamil", "bn": "Bengali", "pa": "Punjabi", "gu": "Gujarati", "kn": "Kannada"
     }
 
+    #encoder working for audio transcription
     def transcribe_audio(audio_file):
         """Transcribe audio using Whisper"""
         with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as temp_file:
             temp_path = temp_file.name
             audio_bytes = audio_file.read()
             temp_file.write(audio_bytes)
-        
+            
+        # wav creation is need because wav is getting better results
         result = model.transcribe(temp_path)
         lang_code = result['language']
         lang_name = lang_map.get(lang_code, lang_code)
         
+        # at the end it removess wav file
         os.remove(temp_path)
         return result["text"], lang_name, result["segments"]
 
+#Gender Analysis by Pitch
+    
     def analyze_gender(audio_path):
         """Analyze audio to predict speaker gender"""
         y, sr = librosa.load(audio_path, sr=None)
         pitches, magnitudes = librosa.piptrack(y=y, sr=sr)
         pitch_values = pitches[magnitudes > 0]
         
+        #we are identifying pitch of the gender 
         if len(pitch_values) == 0:
             return "Unknown"
         
@@ -65,6 +71,8 @@ def main():  # Added this wrapper function for integration
         else:
             return "Undetermined"
 
+    #couunting number of speaker, librosa if identifying pitch, we are making K means algorithm, pitch in each second and then apply K means and make 
+    # a cluster of them
     def count_speakers(audio_path, segments):
         """Count number of unique speakers"""
         y, sr = librosa.load(audio_path, sr=None)
