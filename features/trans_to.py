@@ -2,10 +2,10 @@ import streamlit as st
 import time
 import os
 import tempfile
-from googletrans import Translator
+from googletrans import Translator #google free api to traslate to multiple languages ttos
 from io import BytesIO
 import speech_recognition as sr
-from gtts import gTTS
+from gtts import gTTS # google text to speech
 
 def main():
     # Apply your app's styling with white background
@@ -81,6 +81,7 @@ def main():
     }
     lang_codes = {v: k for k, v in lang_map.items()}
 
+    #session state variaable
     # Initialize session state for history
     if 'translation_history' not in st.session_state:
         st.session_state.translation_history = []
