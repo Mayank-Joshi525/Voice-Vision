@@ -1,7 +1,9 @@
+# word : synynoms antynoms 
+
 import streamlit as st
 import requests
 from gtts import gTTS
-import base64
+import base64 
 import os
 from pathlib import Path
 
@@ -49,6 +51,7 @@ def main():
     # --- Word Data Functions ---
     def get_synonyms(word):
         """Get synonyms from Datamuse API"""
+        
         try:
             response = requests.get(f"https://api.datamuse.com/words?rel_syn={word}", timeout=5)
             if response.status_code == 200:
