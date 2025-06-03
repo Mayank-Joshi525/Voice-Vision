@@ -1,12 +1,12 @@
 import streamlit as st
 import os
 import tempfile
-import fitz  # PyMuPDF
-import wave
+import fitz  # PyMuPDF 
+import wave  #Audio file manipulation  
 import json
 import requests
-from vosk import Model, KaldiRecognizer
-import ffmpeg
+from vosk import Model, KaldiRecognizer # vosk for offline transcription
+import ffmpeg # ** audio video processing ; Open source multimedia framework 
 from datetime import datetime
 
 # WhatsApp-like CSS styling
@@ -152,7 +152,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 def main():
-    MODEL_PATH = "vosk-model-small-en-us-0.15"
+    
+    MODEL_PATH = "vosk-model-small-en-us-0.15" # integration of vosk model
     HUGGINGFACE_API_KEY = "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"
 
     # Initialize session state
