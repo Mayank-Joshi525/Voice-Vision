@@ -1,12 +1,12 @@
 import streamlit as st
-from googleapiclient.discovery import build
-from youtube_transcript_api import YouTubeTranscriptApi
+from googleapiclient.discovery import build # google api 
+from youtube_transcript_api import YouTubeTranscriptApi # youtube data api
 import os
 import re
 from gtts import gTTS
 import tempfile
-import nltk
-from collections import Counter
+import nltk # natural language tool kit 
+from collections import Counter 
 
 def main():
     # Apply consistent styling with main app
